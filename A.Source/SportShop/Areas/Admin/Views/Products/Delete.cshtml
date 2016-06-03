@@ -1,0 +1,127 @@
+﻿@model SportShop.Entities.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header" style="margin-top:20px">Quản lý sản phẩm</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<h3>Bạn có chắc chắn muốn xóa sản phẩm này?</h3>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            <span>Tên sản phẩm</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt>
+            <span>Thương hiệu:</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand.BrandName)
+        </dd>
+
+        <dt>
+            <span>Danh mục:</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            <span>Màu sắc</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Color.ColorName)
+        </dd>
+
+        <dt>
+            <span>Giảm giá: </span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sale.SaleID)
+        </dd>
+
+        <dt>
+            <span>Loại sản phẩm: </span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShoeType.TypeName)
+        </dd>
+
+        <dt>
+            <span>Size:</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size.SizeNum)
+        </dd>
+        <dt>
+            <span>Giá:</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            <span>Mô tả: </span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            <span>Sản phẩm mới: </span>
+        </dt>
+
+        <dd>
+            @if(Model.IsNew == true)
+            {
+                <span>True</span>
+            }
+            else
+            {
+                <span>True</span>
+            }
+        </dd>
+
+        <dt>
+            <span>Đánh giá: </span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            <span>Link Avatar:</span>
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Avatar)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" /> 
+            @Html.ActionLink("Quay lại", "Index", null, htmlAttributes: new { @class = "btn btn-default" })
+        </div>
+    }
+</div>

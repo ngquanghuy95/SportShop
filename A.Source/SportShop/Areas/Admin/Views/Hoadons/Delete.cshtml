@@ -1,0 +1,76 @@
+﻿@using SportShop.Entities
+@model SportShop.Entities.Hoadon
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    IEnumerable<Chitiethoadon> lstCt = (IEnumerable<Chitiethoadon>)ViewData["cthd"];
+    double Thanhtien = (double)ViewData["Thanhtien"];
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header" style="margin-top:20px">Bạn muốn xóa bản ghi này?</h1>
+    </div>
+</div>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Mã hóa đơn:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HoadonID)
+        </dd>
+        <dt>
+            Tên khách hàng
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Khachhang.Tenkhachhang)
+        </dd>
+        <dt>
+            Ngày mua hàng:
+        </dt>
+        <dd>
+            @Model.Ngaythang.ToString("dd/MM/yyyy")
+        </dd>
+        <dt>
+            Chi tiết hóa đơn:
+        </dt>
+        <dd>
+            <table>
+                <tr>
+                    <th style="padding-right:20px;">Tên mặt hàng</th>
+                    <th style="padding-right:20px;">Số lượng</th>
+                    <th style="padding-right:20px;">Giá gốc</th>
+                    <th style="padding-right:20px;">Giá đã bán</th>
+                    <th style="padding-right:20px;">Thành tiền</th>
+                </tr>
+                @foreach (var s in lstCt)
+                {
+                    <tr>
+                        <td>@s.Product.ProductName</td>
+                        <td>@s.Soluong</td>
+                        <td>@s.Giagoc</td>
+                        <td>@s.Giadaban</td>
+                        @{double th = (double)s.Soluong * (double)s.Giadaban;}
+                        <td>@th</td>
+                    </tr>
+                }
+            </table>
+        </dd>
+        <dt>Tổng tiền:</dt>
+        <dd>@Thanhtien</dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Xóa" class="btn btn-primary" />
+                <a href="/Admin/Hoadons" class="btn btn-primary">Hủy</a>
+            </div>
+        </div>
+    }
+</div>

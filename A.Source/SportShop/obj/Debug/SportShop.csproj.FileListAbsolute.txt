@@ -1,0 +1,156 @@
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\SportShop.dll.config
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\SportShop.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\SportShop.pdb
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Antlr3.Runtime.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\EntityFramework.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\EntityFramework.SqlServer.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Core.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Microsoft.Web.Infrastructure.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Newtonsoft.Json.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Owin.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.Helpers.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.Mvc.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.Optimization.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.Razor.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.WebPages.Deployment.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.WebPages.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.WebPages.Razor.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\WebGrease.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.Helpers.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.Mvc.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.Optimization.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.Razor.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.WebPages.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.WebPages.Deployment.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\System.Web.WebPages.Razor.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Antlr3.Runtime.pdb
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Newtonsoft.Json.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\EntityFramework.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\EntityFramework.SqlServer.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Core.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\obj\Debug\SportShop.dll
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\obj\Debug\SportShop.pdb
+E:\My Documents\Visual Studio 2013\Projects\SportShop\SportShop\obj\Debug\SportShop.csprojResolveAssemblyReference.cache
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\SportShop.dll.config
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\SportShop.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\SportShop.pdb
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Antlr3.Runtime.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\EntityFramework.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\EntityFramework.SqlServer.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Microsoft.Web.Infrastructure.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Newtonsoft.Json.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Owin.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.Helpers.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.Mvc.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.Optimization.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.Razor.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.WebPages.Deployment.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.WebPages.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.WebPages.Razor.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\WebGrease.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.Helpers.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.Mvc.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.Optimization.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.Razor.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.WebPages.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.WebPages.Deployment.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\System.Web.WebPages.Razor.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Antlr3.Runtime.pdb
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Newtonsoft.Json.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\EntityFramework.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\EntityFramework.SqlServer.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\obj\Debug\SportShop.csprojResolveAssemblyReference.cache
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\obj\Debug\SportShop.dll
+E:\Semester 6\Cong nghe web\SportShopv1\SportShop\SportShop\obj\Debug\SportShop.pdb
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\obj\Debug\SportShop.csprojResolveAssemblyReference.cache
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\obj\Debug\SportShop.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\obj\Debug\SportShop.pdb
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\SportShop.dll.config
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\SportShop.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\SportShop.pdb
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Antlr3.Runtime.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\EntityFramework.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\EntityFramework.SqlServer.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Microsoft.Web.Infrastructure.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Newtonsoft.Json.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Owin.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.Helpers.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.Mvc.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.Optimization.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.Razor.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.WebPages.Deployment.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.WebPages.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.WebPages.Razor.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\WebGrease.dll
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.Helpers.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.Mvc.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.Optimization.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.Razor.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.WebPages.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.WebPages.Deployment.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\System.Web.WebPages.Razor.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Antlr3.Runtime.pdb
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Newtonsoft.Json.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\EntityFramework.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\EntityFramework.SqlServer.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ProjectWeb\HocWebTrenTruong\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\SportShop.dll.config
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\SportShop.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\SportShop.pdb
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Antlr3.Runtime.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\EntityFramework.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\EntityFramework.SqlServer.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Microsoft.Web.Infrastructure.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Newtonsoft.Json.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Owin.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.Helpers.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.Mvc.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.Optimization.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.Razor.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.WebPages.Deployment.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.WebPages.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.WebPages.Razor.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\WebGrease.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\EntityFramework.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\EntityFramework.SqlServer.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.Helpers.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.Mvc.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.Optimization.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.Razor.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.WebPages.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.WebPages.Deployment.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\System.Web.WebPages.Razor.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Antlr3.Runtime.pdb
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Newtonsoft.Json.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\obj\Debug\SportShop.csprojResolveAssemblyReference.cache
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\obj\Debug\SportShop.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\obj\Debug\SportShop.pdb
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\CKFinder.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\CKFinder_FileEditor.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\CKFinder_ImageResize.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\CKFinder_Watermark.dll
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\CKFinder.pdb
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\CKFinder_FileEditor.pdb
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\CKFinder_ImageResize.pdb
+E:\Semester 6\Cong nghe web\SportShopv2\Project\SportShop\SportShop\bin\CKFinder_Watermark.pdb

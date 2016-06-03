@@ -1,0 +1,48 @@
+﻿@model SportShop.Entities.Sale
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header" style="margin-top:20px">Chi tiết đợt giảm giá</h1>
+    </div>
+</div>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            Đợt giảm giá:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaleName)
+        </dd>
+
+        <dt>
+            Ngày bắt đầu:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            Phần trăm giảm giá:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SaleNum)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <a href="/Admin/Sales/Edit/@Model.SaleID" class="btn btn-primary">Sửa</a>
+        <a href="/Admin/Sales" class="btn btn-primary">Hủy</a>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+﻿@using SportShop.Entities
+@model SportShop.DAO.ShoppingCart
+<div class="tag-list">
+    <ul class="icon1 sub-icon1 profile_img">
+        <li>
+            <a class="active-icon c2" href="/Cart"> </a>
+            <div class="sub-icon1">
+                <span></span>
+                @if (Model != null && Model.ListProduct.Count > 0)
+                {
+                    int sum = 0;
+                    foreach (ShoppingCartItem i in Model.ListProduct)
+                    {
+                        sum += i.Quantity;
+                    }
+                    <div style="background-color:#ddd;padding:5px;color:#555;font-size:13px;font-weight:bold;">
+                        Giỏ hàng của bạn
+                        <div style="float:right;font-weight:normal;">
+                            @sum sản phẩm (@Model.GetTotal().ToString("N0") VNĐ)
+                        </div>
+                    </div>
+                    <div style="overflow:auto;max-height:210px;color:#555555;padding:10px;border-bottom:1px solid #d0d0d0">
+                        <table>
+                            @foreach (ShoppingCartItem item in Model.ListProduct)
+                            {
+                                <tr>
+                                    <td style="width:80px;">
+                                        <div style="padding:10px;">
+                                            <a href="#">
+                                                <img src="~/images/Slider/ngoc-trinh-nu-sinh-5.jpg" style="height:auto; width:80px;" />
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align:top;padding:10px 0 0 15px">
+                                        <span style="color:#36cbed">@item.ProductName</span>
+                                        <br />
+                                        <span style="color:#555;font-size:13px;line-height:3;">@item.Quantity x @item.Priece.ToString("N0") VNĐ  </span>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div style="float:right;padding:10px 10px 10px 0">Tổng cộng:@Model.GetTotal().ToString("N0") VNĐ</div>
+                    <br />
+                    <div style="width:335px;padding:0 15px;float:left;">
+                        <a class="btn btn-grey" style="float:left;" href="/Cart">Chi tiết</a>
+                        <button class="btn btn-blue" style="float:right">Thanh toán</button>
+                    </div>
+                }
+                else
+                {
+                    <div style="background-color:#ddd;padding:5px;color:#555;font-size:13px;font-weight:bold;">
+                        Giỏ hàng của bạn
+                        <div style="float:right;font-weight:normal;">
+                            0 sản phẩm (0 VNĐ)
+                        </div>
+                    </div>
+                    <div style="text-align:center;padding:10px;color:#555555">
+                        Giỏ hàng của bạn trống
+                    </div>
+                }
+            </div>
+        </li>
+    </ul>
+    @if (Model != null && Model.ListProduct.Count > 0)
+    {
+        int sum = 0;
+        foreach (ShoppingCartItem i in Model.ListProduct)
+        {
+            sum += i.Quantity;
+        }
+        <ul class="last"><li><a href="/Cart" class="notiCart">Cart(@sum)</a></li></ul>
+    }
+    else
+    {
+        <ul class="last"><li><a href="/Cart" class="notiCart">Cart(0)</a></li></ul>
+    }
+</div>
+
+
+

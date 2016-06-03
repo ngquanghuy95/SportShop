@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/form.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+
+    <script src="~/js/jquery1.min.js"></script>
+    <!-- start menu -->
+    <link href="~/css/megamenu.css" rel="stylesheet" type="text/css" />
+    <script src="~/js/megamenu.js"></script>
+
+    <!--start slider -->
+    <link rel="stylesheet" href="~/css/fwslider.css">
+    <script src="~/js/jquery-ui.min.js"></script>
+    <script src="~/js/css3-mediaqueries.js"></script>
+    <script src="~/js/fwslider.js"></script>
+    <!--end slider -->
+    <script src="~/js/jquery.easydropdown.js"></script>
+</head>
+<body style="width:100%">
+    <div class="body-content" style="width:100%">
+        <div class="header-top">
+            <div class="wrap">
+                <div class="header-top-left">
+                    <div class="clear"></div>
+                </div>
+                <div class="cssmenu">
+                    <ul>
+                        <li><a href="/Customer/Login">Đăng nhập</a></li> |
+                        <li><a href="/Customer/Register">Đăng ký</a></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="wrap">
+                <div class="header-bottom-left">
+                    <div class="logo">
+                        <a href="/Home">
+                            <img src="~/images/logo.png" />
+                        </a>
+                    </div>
+                    <div id="main-menu" class="menu">
+                        <ul class="megamenu skyblue navbar-nav">
+                            <li class="active grid "><a href="/Home">Trang chủ</a></li>
+                            <li>
+                                <a class="color4" href="/Woman">Nữ</a>
+                                <div class="megapanel">
+                                    <div class="row">
+                                        <div class="col1">
+                                            <div class="h_nav">
+                                                <h4>Adidas</h4>
+                                                <ul>
+                                                    <li><a href="#">Adidas Originals</a></li>
+                                                    <li><a href="#">Adidas NEO</a></li>
+                                                    <li><a href="#">Adidas Stella McCartney </a></li>
+                                                    <li><a href="#">Adidas Porsche Design Sport</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col1">
+                                            <div class="h_nav">
+                                                <h4>Nike</h4>
+                                                <ul>
+                                                    <li><a href="#">Nike</a></li>
+                                                    <li><a href="#">Nike Jordan</a></li>
+                                                    <li><a href="#">Nike Hurley</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="color5" href="/Men">Nam</a>
+                                <div class="megapanel">
+                                    <div class="row">
+                                        <div class="col1">
+                                            <div class="h_nav">
+                                                <h4>Adidas</h4>
+                                                <ul>
+                                                    <li><a href="#">Adidas Originals</a></li>
+                                                    <li><a href="#">Adidas NEO</a></li>
+                                                    <li><a href="#">Adidas Stella McCartney </a></li>
+                                                    <li><a href="#">Adidas Porsche Design Sport</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col1">
+                                            <div class="h_nav">
+                                                <h4>Nike</h4>
+                                                <ul>
+                                                    <li><a href="#">Nike</a></li>
+                                                    <li><a href="#">Nike Jordan</a></li>
+                                                    <li><a href="#">Nike Hurley</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="color5" href="/Kids">Trẻ em</a>
+                                <div class="megapanel">
+                                    <div class="row">
+                                        <div class="col1">
+                                            <div class="h_nav">
+                                                <h4>Adidas</h4>
+                                                <ul>
+                                                    <li><a href="#">Adidas Originals</a></li>
+                                                    <li><a href="#">Adidas NEO</a></li>
+                                                    <li><a href="#">Adidas Stella McCartney </a></li>
+                                                    <li><a href="#">Adidas Porsche Design Sport</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col1">
+                                            <div class="h_nav">
+                                                <h4>Nike</h4>
+                                                <ul>
+                                                    <li><a href="#">Nike</a></li>
+                                                    <li><a href="#">Nike Jordan</a></li>
+                                                    <li><a href="#">Nike Hurley</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="color5" href="/Purchase">Tùy chọn</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-bottom-right">
+                    <div class="search">
+                        <input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                        <input type="submit" value="Subscribe" id="submit" name="submit">
+                        <div id="response"> </div>
+                    </div>
+                    <style>
+                        .icon1 ul {
+                            top: 61px;
+                            right: -136px;
+                            opacity: 1;
+                            visibility: visible;
+                        }
+
+                        .icon1 .sub-icon1 {
+                            top: 61px;
+                            right: -148px;
+                            opacity: 0;
+                            visibility: hidden;
+                            padding: 0 0 10px 0;
+                            margin: 0;
+                            background: #ffffff none repeat scroll 0 0;
+                            box-shadow: 0 2px 6px #aaa;
+                            position: absolute;
+                            transition: all 0.2s ease-in-out 0s;
+                            width: 365px;
+                            z-index: 1;
+                            border-radius: 5px;
+                            border: 1px solid #ddd;
+                        }
+
+                        .icon1 li:hover > .sub-icon1 {
+                            opacity: 1;
+                            visibility: visible;
+                            z-index: 9999;
+                        }
+
+                        .icon1 .sub-icon1 span::after {
+                            border-bottom: 10px solid #f0f0f0;
+                            border-left: 10px solid transparent;
+                            border-right: 10px solid transparent;
+                            content: "";
+                            left: 52%;
+                            position: absolute;
+                            top: -12px;
+                        }
+
+                        .btn {
+                            -moz-user-select: none;
+                            background-image: none;
+                            border: 1px solid transparent;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            display: inline-block;
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 1.42857;
+                            margin-bottom: 0;
+                            padding: 6px 12px;
+                            text-align: center;
+                            vertical-align: middle;
+                            white-space: nowrap;
+                        }
+
+                        .btn-grey {
+                            background: linear-gradient(#ddd,#fff) !important;
+                            border-color: #d0d0d0;
+                            color: #808080;
+                        }
+
+                            .btn-grey:hover {
+                                background: linear-gradient(#fff,#ddd) !important;
+                                color: #808080 !important;
+                            }
+
+                        .btn-blue {
+                            background: linear-gradient(#4CB1CA,#fff) !important;
+                            border-color: #2e6da4;
+                            color: #808080;
+                        }
+
+                            .btn-blue:hover {
+                                background: linear-gradient(#fff,#4CB1CA) !important;
+                            }
+                    </style>
+                    <div id="AjaxCart">
+                        @Html.Partial("TagCart", (SportShop.DAO.ShoppingCart)Session["Cart"])
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        @RenderBody()
+        <div class="footer">
+            <div class="footer-top">
+                <div class="wrap">
+                    <div class="section group example">
+                        <div class="col_1_of_2 span_1_of_2">
+                            <ul class="f-list">
+                                <li><img src="~/images/2.png"><span class="f-text">Giao hàng tốc độ cao</span><div class="clear"></div></li>
+                            </ul>
+                        </div>
+                        <div class="col_1_of_2 span_1_of_2">
+                            <ul class="f-list">
+                                <li><img src="~/images/3.png"><span class="f-text">Hãy gọi ngay -0123456789 </span><div class="clear"></div></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <div class="wrap">
+                    <div class="section group example">
+                        <div class="col_1_of_f_1 span_1_of_f_1">
+                            <div class="section group example">
+                                <div class="col_1_of_f_2 span_1_of_f_2">
+                                    <h3>Facebook</h3>
+                                    <script>
+                                        (function (d, s, id) {
+                                            var js, fjs = d.getElementsByTagName(s)[0];
+                                            if (d.getElementById(id)) return;
+                                            js = d.createElement(s); js.id = id;
+                                            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }(document, 'script', 'facebook-jssdk'));</script>
+                                    <div class="like_box">
+                                        <div class="fb-like-box" data-href="http://www.facebook.com/w3layouts" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+                                    </div>
+                                </div>
+                                <div class="col_1_of_f_2 span_1_of_f_2">
+                                    <h3>Twitter</h3>
+                                    <div class="recent-tweet">
+                                        <div class="recent-tweet-icon">
+                                            <span> </span>
+                                        </div>
+                                        <div class="recent-tweet-info">
+                                            <p>Ds which don't look even slightly believable. If you are <a href="#">going to use nibh euismod</a> tincidunt ut laoreet adipisicing</p>
+                                        </div>
+                                        <div class="clear"> </div>
+                                    </div>
+                                    <div class="recent-tweet">
+                                        <div class="recent-tweet-icon">
+                                            <span> </span>
+                                        </div>
+                                        <div class="recent-tweet-info">
+                                            <p>Ds which don't look even slightly believable. If you are <a href="#">going to use nibh euismod</a> tincidunt ut laoreet adipisicing</p>
+                                        </div>
+                                        <div class="clear"> </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="col_1_of_f_1 span_1_of_f_1">
+                            <div class="section group example">
+                                <div class="col_1_of_f_2 span_1_of_f_2">
+                                    <h3>Thông tin liên quan</h3>
+                                    <ul class="f-list1">
+                                        <li><a href="#">Link 1 số website về thể thao</a></li>
+                                        <li><a href="#">Link 1 số website về thể thao</a></li>
+                                        <li><a href="#">Link 1 số website về thể thao</a></li>
+                                        <li><a href="#">Link 1 số website về thể thao</a></li>
+                                        <li><a href="#">Link 1 số website về thể thao</a></li>
+                                        <li><a href="#">Link 1 số website về thể thao</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col_1_of_f_2 span_1_of_f_2">
+                                    <h3>Liên hệ</h3>
+                                    <div class="company_address">
+                                        <p>000 Hoàng Quốc Việt, Hà Nội</p>
+                                        <p>Việt Nam</p>
+                                        <p>Phone:(00) 000 000 000</p>
+                                        <p>Fax: (000) 000 00 00 0</p>
+                                        <p>Email: <span>email@email.com</span></p>
+
+                                    </div>
+                                    <div class="social-media">
+                                        <ul>
+                                            <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="Google"><a href="#" target="_blank"> </a></span></li>
+                                            <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Linked in"><a href="#" target="_blank"> </a> </span></li>
+                                            <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Rss"><a href="#" target="_blank"> </a></span></li>
+                                            <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Facebook"><a href="#" target="_blank"> </a></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="wrap">
+                    <div class="copy">
+                        <p>© 2016 Wesite by Group 3</p>
+                    </div>
+                    @*<div class="f-list2">
+                        <ul>
+                            <li class="active"><a href="about.html">About Us</a></li> |
+                            <li><a href="delivery.html">Delivery & Returns</a></li> |
+                            <li><a href="delivery.html">Terms & Conditions</a></li> |
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>*@
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () { $(".megamenu").megamenu(); });
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .nivoSlider .nivo-main-image{
+        height:320px!important;
+    }
+</style>
+<!-- start slider -->
+<div id="fwslider">
+    <div class="slider_container">
+        <div class="slide">
+            <!-- Slide image -->
+            <img src="~/images/Slider/slider1.jpg" style="max-height:534px;"/>
+            <!-- /Slide image -->
+            <!-- Texts container -->
+            <div class="slide_content">
+                <div class="slide_content_wrap">
+                    <!-- Text title -->
+                    <h4 class="title"></h4>
+                    <!-- /Text title -->
+                    <!-- Text description -->
+                    <p class="description"></p>
+                    <!-- /Text description -->
+                </div>
+            </div>
+            <!-- /Texts container -->
+        </div>
+        <!-- /Duplicate to create more slides -->
+        <div class="slide">
+            <img src="~/images/Slider/slider2.jpg" style="max-height:534px;" />
+            <div class="slide_content">
+                <div class="slide_content_wrap">
+                    <h4 class="title"></h4>
+                    <p class="description"></p>
+                </div>
+            </div>
+        </div>
+        <!---->
+            <div class="slide">
+                <img src="~/images/Slider/image.jpg" style="max-height:534px;" />
+            <div class="slide_content">
+                <div class="slide_content_wrap">
+                    <h4 class="title"></h4>
+                    <p class="description"></p>
+                </div>
+            </div>
+        </div>
+        
+        <!--/slide -->
+    </div>
+    <div class="timers"></div>
+    <div class="slidePrev"><span></span></div>
+    <div class="slideNext"><span></span></div>
+</div>
+<!--/slider -->
+<div class="main">
+    <div class="wrap">
+        <div class="section group">
+            <div class="cont span_2_of_3">
+                @Html.Partial("ListProduct", new ViewDataDictionary { { "lstP", ViewData["lstP"] }, { "lstNP", ViewData["lstNP"] }, { "lstSP", ViewData["lstSP"] }, { "lstRP", ViewData["lstRP"] } })
+            </div>
+            <div class="rsidebar span_1_of_left">
+                <div class="top-border"> </div>
+                <div class="border">
+                    <link href="~/css/default.css" rel="stylesheet" type="text/css" media="all" />
+                    <link href="~/css/nivo-slider.css" rel="stylesheet" type="text/css" media="all" />
+                    <script src="~/js/jquery.nivo.slider.js"></script>
+                    <script type="text/javascript">
+				    
+				    $(window).load(function() {
+				        $('#slider').nivoSlider();
+				    });
+                    </script>
+                    <div class="slider-wrapper theme-default">
+                        <div id="slider" class="nivoSlider" >
+                            @*<img  src="~/images/Slider/images.jpg" />*@
+                            <img src="~/images/Slider/0a92a41409708883hg3.jpg" />
+                            <img src="~/images/Slider/images1.jpg" />
+                            <img src="~/images/Slider/images2.jpg" />
+                            @*<img  src="~/images/Slider/m_4125915_1v24RD2k4HHxjpg640.jpg" />*@
+                            @*<img src="~/images/Slider/anh_6.jpg" />*@
+                        </div>
+                    </div>
+                    @*<div class="btn btn-primary"><a href="#">Xem ngay</a></div>*@
+                </div>
+                @*<div class="top-border"> </div>*@
+                
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

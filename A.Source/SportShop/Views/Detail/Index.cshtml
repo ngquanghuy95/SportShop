@@ -1,0 +1,293 @@
+﻿@using SportShop.Entities;
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Product product = (Product)ViewData["Product"];
+    IQueryable<Category> lstCat = (IQueryable<Category>)ViewData["Category"];
+    IQueryable<Brand> lstBra = (IQueryable<Brand>)ViewData["Brand"];
+    IQueryable<Color> lstCol = (IQueryable<Color>)ViewData["Color"];
+    IQueryable<Size> lstSiz = (IQueryable<Size>)ViewData["Size"];
+    IQueryable<ShoeType> lstTyp = (IQueryable<ShoeType>)ViewData["Type"];
+    IEnumerable<Product> lstRP = (IEnumerable<Product>)ViewData["lstRP"];
+}
+<link rel="stylesheet" href="~/css/etalage.css">
+<script src="~/js/jquery.etalage.min.js"></script>
+@*<link href="~/css/bootstrap.min.css" rel="stylesheet" />*@
+<style>
+    .btn {
+        -moz-user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857;
+        margin-bottom: 0;
+        padding: 6px 12px;
+        text-align: center;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+
+    .btn-primary {
+        background-color: #337ab7;
+        border-color: #2e6da4;
+        color: #fff;
+    }
+
+    .scroll-pane {
+        padding-left: 0;
+    }
+
+    .color {
+        margin-right: 10px;
+    }
+</style>
+<script>
+    $(function () {
+        $('#products').slides({
+            preload: true,
+            preloadImage: 'img/loading.gif',
+            effect: 'slide, fade',
+            crossfade: true,
+            slideSpeed: 350,
+            fadeSpeed: 500,
+            generateNextPrev: true,
+            generatePagination: false
+        });
+    })
+    jQuery(document).ready(function($){
+
+        $('#etalage').etalage({
+            thumb_image_width: 360,
+            thumb_image_height: 360,
+            source_image_width: 900,
+            source_image_height: 900,
+            show_hint: true,
+            click_callback: function(image_anchor, instance_id){
+                alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+            }
+        });
+
+    });
+</script>
+<div class="mens">
+    <div class="main">
+        <div class="wrap">
+            <ul class="breadcrumb breadcrumb__t">
+                <a class="home" href="/Home">Trang chủ</a> /@product.ProductName
+            </ul>
+            <div class="cont span_2_of_3">
+                <div class="grid images_3_of_2">
+                    <ul id="etalage">
+                        @foreach (var item in product.Images)
+                        {
+                            <li>
+                                <img class="etalage_thumb_image img-responsive" src="@item.LinkImage" />
+                                <img class="etalage_source_image img-responsive" src="@item.LinkImage" title="" />
+                            </li>
+                        }
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="desc1 span_3_of_2">
+                    <h3 class="m_3">@product.ProductName</h3>
+                    @if (product.Sale.SaleNum > 0)
+                    {
+                        float actual;
+                        actual = (float)product.Price * (float)product.Sale.SaleNum / 100;
+                        <p class="m_5">@actual <span class="reducedfrom">@product.Price</span></p>
+                    }
+                    else
+                    {
+                        <p class="m_5">@product.Price</p>
+                    }
+                    <div class="btn_form">
+                        <button class="btn btn-primary" onclick="AddToCart(@product.ProductID)" id="btnAddToCart">Thêm vào giỏ hàng</button>
+                    </div>
+                    <p class="m_text2">@product.Description</p>
+                </div>
+                <div class="clear"></div>
+                <div class="clients">
+                    <h3 class="m_3">Các sản phẩm xem nhiều</h3>
+                    <ul id="flexiselDemo3">
+                        @foreach (var item in lstRP)
+                        {
+                            <li><img src="@item.Avatar" /><a href="/Home/Detail?id=@item.ProductID">@item.ProductName</a><p>@item.Price</p></li>
+                        }
+                    </ul>
+                    <script type="text/javascript">
+                        $(window).load(function () {
+                            $("#flexiselDemo1").flexisel();
+                            $("#flexiselDemo2").flexisel({
+                                enableResponsiveBreakpoints: true,
+                                responsiveBreakpoints: {
+                                    portrait: {
+                                        changePoint: 480,
+                                        visibleItems: 1
+                                    },
+                                    landscape: {
+                                        changePoint: 640,
+                                        visibleItems: 2
+                                    },
+                                    tablet: {
+                                        changePoint: 768,
+                                        visibleItems: 3
+                                    }
+                                }
+                            });
+
+                            $("#flexiselDemo3").flexisel({
+                                visibleItems: 5,
+                                animationSpeed: 1000,
+                                autoPlay: false,
+                                autoPlaySpeed: 3000,
+                                pauseOnHover: true,
+                                enableResponsiveBreakpoints: true,
+                                responsiveBreakpoints: {
+                                    portrait: {
+                                        changePoint: 480,
+                                        visibleItems: 1
+                                    },
+                                    landscape: {
+                                        changePoint: 640,
+                                        visibleItems: 2
+                                    },
+                                    tablet: {
+                                        changePoint: 768,
+                                        visibleItems: 3
+                                    }
+                                }
+                            });
+
+                        });
+                    </script>
+
+                </div>
+                <div class="toogle">
+                    <h3 class="m_3">Chi tiết sản phẩm</h3>
+                </div>
+                <div class="toogle">
+                    <h3 class="m_3">Thông tin xem thêm</h3>
+                </div>
+            </div>
+            <div class="rsingle span_1_of_single">
+                <section class="sky-form">
+                    <h4>Danh mục</h4>
+                    <div class="row row1 scroll-pane" style="height:auto;">
+                        <div class="col col-4">
+                            @foreach (var item in lstCat)
+                            {
+                                <label class="radio"><input type="radio" name="radioCategory"><i></i>@item.CategoryName</label>
+                            }
+                        </div>
+                    </div>
+                </section>
+                <section class="sky-form">
+                    <h4>Giá</h4>
+                    <div class="row row1 scroll-pane">
+                        <div class="col col-4">
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>700.000 -  1000.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>1.000.000 - 1.500.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>1.500.000 - 2.000.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>2.000.000 - 2.500.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>2.500.000 - 3.000.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>3.500.000 - 4.000.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>4.000.000 - 4.500.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>4.500.000 - 5.000.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>5.000.000 - 5.500.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>5.500.000 - 6.000.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>6.000.000 - 6.500.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>6.500.000 - 7.000.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>7.000.000 - 7.500.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>7.500.000 - 8.000.000</label>
+                            <label class="radio"><input type="radio" name="radioPriece"><i></i>8.000.000 - 8.500.000</label>
+                        </div>
+                    </div>
+                </section>
+                <section class="sky-form">
+                    <h4>Thương hiệu</h4>
+                    <div class="row row1 scroll-pane">
+                        <div class="col col-4">
+                            @foreach (var item in lstBra)
+                            {
+                                <label class="radio"><input type="radio" name="radioBrand"><i></i>@item.BrandName</label>
+                            }
+
+                        </div>
+                    </div>
+                </section>
+                <section class="sky-form">
+                    <h4>Loại giày</h4>
+                    <div class="row row1 scroll-pane">
+                        <div class="col col-4">
+                            @foreach (var item in lstTyp)
+                            {
+                                <label class="radio"><input type="radio" name="radioTypeShoes"><i></i>@item.TypeName</label>
+                            }
+                        </div>
+
+                    </div>
+                </section>
+                <section class="sky-form">
+                    <h4>Màu sắc</h4>
+                    <div class="row row1 scroll-pane">
+                        <div class="col col-4">
+                            <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color1"> </span> Đỏ</label>
+                            <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color2"> </span> Xanh lá</label>
+                            <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color3"> </span> Xanh dương</label>
+                            <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color4"> </span> Vàng</label>
+                            <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color5"> </span> Tím</label>
+                            <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color6"> </span> Cam</label>
+                            <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color7"> </span> Xám</label>
+                        </div>
+                    </div>
+                </section>
+                <section class="sky-form">
+                    <button class="btn btn-primary" style="left:40%"><p>Tìm kiếm</p></button>
+                </section>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<script src="~/js/slides.min.jquery.js"></script>
+
+<script src="~/js/jquery.flexisel.js"></script>
+<script>
+    //function AddToCart(id){
+    //    $.ajax({
+    //        cache: false, 
+    //        contentType: "application/text; charset=utf-8",
+    //        url: "/Cart/AddToCart",
+    //        type: "POST",
+    //        //data: {"id":1},
+    //        data:JSON.stringify({ StrData: '', ObjData: '' }),
+    //        dateType:"text",
+    //        success: function (data) {
+    //        },
+    //        error: function (data) {
+    //        }
+    //    });
+    //}
+    function AddToCart(id){
+        $.post(
+            // URL 
+            "/Cart/AddToCart",
+            // Data
+            {"id":id},
+            // Success
+            function(data){ 
+                $('#AjaxCart').html(data);
+                alert("Thêm thành công!")
+            },
+            // dataTyppe
+            'text' 
+        );
+    };
+
+</script>
