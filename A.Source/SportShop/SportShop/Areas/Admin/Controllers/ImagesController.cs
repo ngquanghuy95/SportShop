@@ -22,5 +22,20 @@ namespace SportShop.Areas.Admin.Controllers
             IQueryable<Image> lstImages = imgDAO.LstImages(ID);
             return PartialView("_Grid",lstImages);
         }
+        public ActionResult Delete(int ImgID, int ProductID)
+        {
+            imgDAO.Delete(ImgID);
+            IQueryable<Image> lstImages = imgDAO.LstImages(ProductID);
+            ViewBag.ErrMsg = "Xóa thành công (Success)";
+            return PartialView("_Grid", lstImages);
+            
+        }
+        public ActionResult Create(string linkImg, int ProductID)
+        {
+            imgDAO.Create(linkImg, ProductID);
+            IQueryable<Image> lstImages = imgDAO.LstImages(ProductID);
+            ViewBag.ErrMsg = "Thêm thành công (Success)";
+            return PartialView("_Grid", lstImages);
+        }
     }
 }

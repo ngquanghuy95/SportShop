@@ -857,8 +857,6 @@
     <Content Include="images\pic7.jpg" />
     <Content Include="images\pic8.jpg" />
     <Content Include="images\plus.gif" />
-    <Content Include="images\product\lab11.1.PNG" />
-    <Content Include="images\product\lab11.2.PNG" />
     <Content Include="images\product\p1.1.jpg" />
     <Content Include="images\product\p1.2.jpg" />
     <Content Include="images\product\p1.3.jpg" />
@@ -926,7 +924,6 @@
     <Content Include="images\product\s25.3.jpg" />
     <Content Include="images\product\s3.1.jpg" />
     <Content Include="images\product\s3.2.jpg" />
-    <Content Include="images\product\s3.3.jpg" />
     <Content Include="images\product\s4.1.jpg" />
     <Content Include="images\product\s4.2.jpg" />
     <Content Include="images\product\s4.3.jpg" />
@@ -978,6 +975,8 @@
     <Content Include="images\Thumbs.db" />
     <Content Include="images\zoom.png" />
     <Content Include="images\_thumbs\Files\^9A73DE189BDE3AE446DA95BF3644DADA7F4B12D54124450AE6^pimgpsh_fullsize_distr.jpg" />
+    <Content Include="js\bootstrap-notify.min.js" />
+    <Content Include="js\fnNotify.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\sb-admin-2.js" />
     <Content Include="leo-shop-pack\404.html" />

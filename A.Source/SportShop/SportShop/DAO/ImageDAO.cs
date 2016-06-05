@@ -23,5 +23,20 @@ namespace SportShop.DAO
                     where s.ProductID == ProductID
                     select s);
         }
+        public void Delete(int imgID)
+        {
+            var img = myData.Images.SingleOrDefault(x => x.ImageID == imgID);
+            if(img!=null){
+                myData.Images.Remove(img);
+                myData.SaveChanges();
+            }
+            
+        }
+        public void Create(string linkImg, int prID)
+        {
+            Image img = new Image { LinkImage = linkImg, ProductID = prID };
+            myData.Images.Add(img);
+            myData.SaveChanges();
+        }
     }
 }

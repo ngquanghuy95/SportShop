@@ -43,6 +43,30 @@
             
         </div>
     </div>
+    <div class="modal fade" id="MyModal" role="dialog">
+        <div class="modal-dialog-ci" style="margin:200px auto">
+            <div class="modal-content">
+                <div class="modal-body" style="padding:0;">
+                    <button type="button" class="close cancelDelete" data-dismiss="modal" style="position:absolute;top:0;right:5px">&times;</button>
+                    <div style="margin:0;padding:0;font-size:13px;" class="row">
+                        <div style="width:100%;float:left;position:relative;padding-top:3px">
+                            <div style="width:100%;float:left;position:relative;text-align:center">
+                                <span style="color:#385723;font-weight:bold;font-size:16px;">Thông báo</span>
+                            </div>
+                            <div style="width:100%;float:left;text-align:center;padding-top:15px;">
+                                <span>Bạn có chắc muốn xóa ảnh này?</span>
+                                <input type="hidden" id="imgDelete" value="" />
+                            </div>
+                            <div style="width:100%;float:left;padding-top:15px;padding-left:100px;margin-bottom:5px;">
+                                <button class="btn btn-primary" id="btnConfirmDelete" style="float:left;width:65px;margin-right:10px;">Đồng ý</button>
+                                <button class="btn btn-primary cancelDelete" style="float:left;width:65px;padding:5px;">Hủy bỏ</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="GridImg">
         @RenderPage("_Grid.cshtml")  ; 
 
@@ -54,6 +78,7 @@
             $.post("/Admin/Images/ChooseProduct", { "id": prID }
                 , function (data,status) {
                     $("#GridImg").html(data);
+
                 }
             );
         });
