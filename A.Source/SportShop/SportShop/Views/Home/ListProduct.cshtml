@@ -12,7 +12,7 @@
 </style>
 <h2 class="head">Danh sách các sản phẩm</h2>
 <div class="top-box">
-    @foreach (var item in lstP)
+    @foreach (var item in lstP.Take(9))
     {
         <div class="col_of_product">
             <div class="col_1_of_3 span_1_of_3">
@@ -86,7 +86,7 @@
 </div>
 <h2 class="head">Danh sách sản phẩm mới</h2>
 <div class="top-box">
-    @foreach (var item in lstNP)
+    @foreach (var item in lstNP.Take(9))
     {
         <div class="col_of_product">
             <div class="col_1_of_3 span_1_of_3">
@@ -121,7 +121,7 @@
 </div>
 <h2 class="head">Danh sách sản phẩm giảm giá</h2>
 <div class="top-box">
-    @foreach (var item in lstSP)
+    @foreach (var item in lstSP.Take(9))
     {
         <div class="col_of_product">
             <div class="col_1_of_3 span_1_of_3">
@@ -161,7 +161,7 @@
 </div>
 <h2 class="head">Danh sách sản phẩm xem nhiều nhất</h2>
 <div class="top-box">
-    @foreach (var item in lstRP)
+    @foreach (var item in lstRP.Take(9))
     {
         <div class="col_of_product">
             <div class="col_1_of_3 span_1_of_3">
@@ -249,4 +249,21 @@
             'text'
         );
     };
+    $('.cart-left .title').each(function (i, e) {
+        $(this).html(StringCutter($(this).html(), 18));
+    });
+    function StringCutter(str, maxlength) {
+        var i;
+        if (str.length > maxlength) {
+            for (i = maxlength; i > 0; i--) {
+                if (str[i] != ' ') {
+                    maxlength = maxlength - 1;
+                    break;
+                } else {
+                    break;
+                }
+            }
+            return str.substr(0, maxlength) + '...';
+        } else { return str; }
+    }
 </script>

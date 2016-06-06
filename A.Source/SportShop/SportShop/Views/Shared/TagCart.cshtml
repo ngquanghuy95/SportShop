@@ -27,14 +27,14 @@
                                     <td style="width:80px;">
                                         <div style="padding:10px;">
                                             <a href="#">
-                                                <img src="~/images/Slider/ngoc-trinh-nu-sinh-5.jpg" style="height:auto; width:80px;" />
+                                                <img src="@item.Avatar" style="height:auto; width:80px;" />
                                             </a>
                                         </div>
                                     </td>
                                     <td style="vertical-align:top;padding:10px 0 0 15px">
                                         <span style="color:#36cbed">@item.ProductName</span>
                                         <br />
-                                        <span style="color:#555;font-size:13px;line-height:3;">@item.Quantity x @item.Priece.ToString("N0") VNĐ  </span>
+                                        <span style="color:#555;font-size:13px;line-height:3;">@item.Quantity x @((item.Priece*1000).ToString("N0")) VNĐ  </span>
                                     </td>
                                 </tr>
                             }
@@ -44,7 +44,7 @@
                     <br />
                     <div style="width:335px;padding:0 15px;float:left;">
                         <a class="btn btn-grey" style="float:left;" href="/Cart">Chi tiết</a>
-                        <button class="btn btn-blue" style="float:right">Thanh toán</button>
+                        <a class="btn btn-blue" style="float:right" href="/Cart">Thanh toán</a>
                     </div>
                 }
                 else

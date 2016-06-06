@@ -49,7 +49,7 @@ namespace SportShop.DAO
             {
                 result += o.Total;
             }
-            return result;
+            return result*1000;
         }
         public void EmptyCart()
         {

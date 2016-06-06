@@ -81,5 +81,26 @@ namespace SportShop.DAO
                    where sale.SaleNum > 0 && s.CategoryID == categoryID
                    select s;
         }
+        public void AddCustomer(Khachhang kh)
+        {
+            myData.Khachhangs.Add(kh);
+            myData.SaveChanges();
+        }
+        public bool Login(string Username, string Password)
+        {
+            var result = myData.Khachhangs.Count(x => x.Email == Username && x.Password == Password);
+            if (result > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public Khachhang GetKhachhang(string Email)
+        {
+            return (myData.Khachhangs.Single(x => x.Email.Equals(Email)));
+        }
     }
 }

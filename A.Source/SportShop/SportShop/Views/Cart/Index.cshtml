@@ -3,6 +3,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@{
+    SportShop.Entities.Khachhang kh = (SportShop.Entities.Khachhang)Session["Khachhang"];
+  }
+
 <script>
     function RemoveFromCart(id) {
         if (confirm('Bạn muốn xóa sản phẩm khỏi giỏ hàng?')) {
@@ -177,14 +181,15 @@
     }
 
 </style>
+
 <div class="main">
     <div class="wrap">
         <div class="cont span_2_of_3">
             <div class="frameButtom">
-                <div class="float-left cart-left-buttons" style="position:relative">
-                    <a class="btn btn-grey" href="/Home">Tiếp tục mua sắm</a>
+                <div class=" cart-left-buttons" style="position:relative">
+                    <a href="/Home">Tiếp tục mua sắm | </a>
                     <a id="empty-cart" onclick="RemoveCart()" class="" href="javascript:void(0)">Xoá Giỏ Hàng</a>
-                    <button class="btn btn-blue" style="position:absolute;right:0;z-index:1;">Thanh toán</button>
+                    <a style="position:absolute;right:0;z-index:1; cursor:pointer" id="btnThanhtoan" data-toggle="modal" data-target="#myModal">Thanh toán</a>
                 </div>
                 @*<div class="cart-right-buttons ">
                     <button class="btn btn-blue float-right">Thanh toán</button>
@@ -197,9 +202,9 @@
                         <tbody>
                             <tr>
                                 <th colspan="2" class="left">Sản Phẩm</th>
-                                <th class="right">Giá</th>
+                                <th class="right">Giá (VNĐ)</th>
                                 <th class="quantity-cell">Số Lượng</th>
-                                <th class="right">Tổng Tiền</th>
+                                <th class="right">Tổng Tiền (VNĐ)</th>
                             </tr>
                             @if (Model != null)
                             {
@@ -218,7 +223,7 @@
                                             <a href="#" onclick="RemoveFromCart(@item.ProductID)"><i class="fa fa-times" style="cursor:pointer;color:red;" title="Xóa"></i></a>
                                         </td>
                                         <td class="product-price">
-                                            <span>@item.Priece.ToString("N0") VNĐ</span>
+                                            <span>@item.Quantity x @((item.Priece * 1000).ToString("N0"))</span>
                                             &nbsp;
                                             @*<p style="text-decoration: line-through;">1.809.000đ</p>*@
                                         </td>
@@ -228,9 +233,8 @@
                                             <a onclick="ChangeAmount(-1,@item.ProductID)" class="decrease">−</a>
                                         </td>
                                         <td class="price-cell">
-                                            <span class="price">@item.Total.ToString("N0")</span>
+                                            <span class="price">@((item.Total*1000).ToString("N0"))</span>
                                             &nbsp;
-                                            <span class="price">VNĐ</span>
                                         </td>
                                     </tr>
                                 }
@@ -273,12 +277,10 @@
                         </div>
                 </div>
             <div class="frameButtom">
-                <div class="float-left cart-left-buttons">
-                    <a class="btn btn-grey" href="/Home">Tiếp tục mua sắm</a>
+                <div class=" cart-left-buttons" style="position:relative">
+                    <a href="/Home">Tiếp tục mua sắm | </a>
                     <a id="empty-cart" onclick="RemoveCart()" class="" href="javascript:void(0)">Xoá Giỏ Hàng</a>
-                </div>
-                <div class="float-left cart-right-buttons">
-                    <button class="btn btn-blue float-right">Thanh toán</button>
+                    <a style="position:absolute;right:0;z-index:1; cursor:pointer" onclick="Thanhtoan()" >Thanh toán</a>
                 </div>
             </div>
         </div>
@@ -287,5 +289,77 @@
             <div class="border"></div>
         </div>
         <div class="clear"></div>
+
     </div>
 </div>
+
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+@if (kh != null && Model != null) { 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width:730px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel" style="text-align:center;">Hóa đơn thanh toán</h4>
+            </div>
+            <div class="modal-body">
+                <span>Tên khách hàng: @kh.Tenkhachhang</span>
+                <br />
+                <span>Danh sách sản phẩm:</span>
+                <br />
+                <table class="table top table-width">
+                    <tbody>
+                        <tr>
+                            <th class="left">Sản Phẩm</th>
+                            <th class="right">Giá (VNĐ)</th>
+                            <th class="quantity-cell">Số Lượng</th>
+                            <th class="right">Tổng Tiền (VNĐ)</th>
+                        </tr>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model.ListProduct)
+                            {
+                                <tr>
+                                    
+                                    <td style="width: 50%;" class="product-description">
+                                        <a href="/Detail?id=@item.ProductID">@item.ProductName</a>
+                                    </td>
+                                    <td class="product-price">
+                                        <span>@item.Quantity x @((item.Priece * 1000).ToString("N0"))</span>
+                                        &nbsp;
+                                        @*<p style="text-decoration: line-through;">1.809.000đ</p>*@
+                                    </td>
+                                    <td class="quantity-cell">
+                                        <span>@item.Quantity</span>
+                                    </td>
+                                    <td class="price-cell">
+                                        <span class="price">@((item.Total * 1000).ToString("N0"))</span>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+                <span style="font-style: italic;">Tổng tiền:</span>
+                <span id="subtotal" style="margin-left:5px; font-size:18px; font-weight:bold;">@Model.GetTotal().ToString("N0") VNĐ</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+</div>
+<input  type="hidden" id="checkKh" value="@(kh!=null ? 1: 0)"/>
+}
+<script>
+    function Thanhtoan() {
+        if ($('#checkKh').val() == 1) {
+            $('#myModal').modal();
+        } else {
+            alert('Vui lòng đăng nhập')
+        }
+    }
+</script>

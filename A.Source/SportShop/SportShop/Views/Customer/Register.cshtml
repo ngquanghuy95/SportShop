@@ -7,22 +7,19 @@
 <div class="register_account">
     <div class="wrap">
         <h4 class="title">Đăng ký tài khoản</h4>
-        <form>
+        <form role="form" action="/Customer/AddKhachhang" method="post">
             <div class="col_1_of_2 span_1_of_2">
-                <div><input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}"></div>
-                <div><input type="text" value="E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-Mail';}"></div>
-                <div><input type="text" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"></div>
+                <div><input type="text" name="inpName" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}"></div>
+                <div><input type="text" name="inpEmail" value="E-Mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-Mail';}"></div>
+                <div><input type="text" name="inpPass" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"></div>
             </div>
             <div class="col_1_of_2 span_1_of_2">
-                <div><input type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></div>
-                <div><input type="text" value="City" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'City';}"></div>
+                <div><input type="text" name="inpAdress" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></div>
+                <div><input type="text" name="inpPhoneNumber" value="PhoneNumber" onfocus="this.value = '';" onblur="    if (this.value == '') { this.value = 'PhoneNumber'; }"></div>
                 <div>
+                    <input type="submit" style="margin-top:10px;" value="Đăng ký" class="btn btn-primary" />
                 </div>
-                <input type="text" value="" class="code"> - <input type="text" value="" class="number">
-                <p class="code">Country Code + Phone Number</p>
             </div>
-            <button class="grey">Đăng ký</button>
-            <p class="terms">Tôi đồng ý với điều khoản của website <a href="#">Terms &amp; Conditions</a>.</p>
             <div class="clear"></div>
         </form>
     </div>
