@@ -49,16 +49,16 @@
                     <tr>
                         <td>@s.Product.ProductName</td>
                         <td>@s.Soluong</td>
-                        <td>@s.Giagoc</td>
-                        <td>@s.Giadaban</td>
-                        @{double th = (double)s.Soluong * (double)s.Giadaban;}
-                        <td>@th</td>
+                        <td>@((s.Giagoc*1000).ToString("N0")) </td>
+                        <td>@((s.Giadaban * 1000).ToString("N0")) </td>
+                        @{double th = (double)s.Soluong * (double)s.Giadaban *1000;}
+                        <td>@th.ToString("N0") </td>
                     </tr>
                 }
             </table>
         </dd>
         <dt>Tổng tiền:</dt>
-        <dd>@Thanhtien</dd>
+        <dd>@((Thanhtien*1000).ToString("N0"))</dd>
     </dl>
 </div>
 

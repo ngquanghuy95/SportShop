@@ -50,11 +50,12 @@
            );
         }
     };
+
 </script>
 
 
 <div class="main">
-    <div class="wrap">
+    <div id="boxPurchase" class="wrap">
         <div class="cont span_2_of_3">
             <div class="frameButtom">
                 <div class=" cart-left-buttons" style="position:relative">
@@ -226,7 +227,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Thanh toán</button>
+                <a href="/Cart/Purchase" id="btnConfirmPay" type="button" class="btn btn-primary">Thanh toán</a>
             </div>
         </div>
     </div>
@@ -240,5 +241,6 @@
             alert('Vui lòng đăng nhập')
         }
     }
+   
 </script>
 @*<link href="~/css/bootstrap.min.css" rel="stylesheet" />*@

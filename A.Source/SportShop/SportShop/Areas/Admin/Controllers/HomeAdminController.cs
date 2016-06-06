@@ -14,7 +14,7 @@ namespace SportShop.Areas.Admin.Controllers
         {
             if (Session["Username"] != null)
             {
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Index", "Categories");
             }
             else
             {

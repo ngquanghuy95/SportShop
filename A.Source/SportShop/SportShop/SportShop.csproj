@@ -168,7 +168,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KidsController.cs" />
     <Compile Include="Controllers\MenController.cs" />
-    <Compile Include="Controllers\PurchaseController.cs" />
     <Compile Include="Controllers\WomanController.cs" />
     <Compile Include="DAO\ImageDAO.cs" />
     <Compile Include="DAO\ShoppingCart.cs" />
@@ -806,6 +805,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\myStyle.css" />
     <Content Include="css\sb-admin-2.css" />
     <Content Include="css\timeline.css" />
     <Content Include="favicon.ico" />
@@ -968,6 +968,7 @@
     <Content Include="images\Slider\ngoc-trinh-nu-sinh-5.jpg" />
     <Content Include="images\Slider\slider1.jpg" />
     <Content Include="images\Slider\slider2.jpg" />
+    <Content Include="images\Slider\slider4.jpg" />
     <Content Include="images\t-img1.jpg" />
     <Content Include="images\t-img2.jpg" />
     <Content Include="images\t-img3.jpg" />
@@ -2765,6 +2766,9 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Detail\Index.cshtml" />
     <Content Include="Views\Shared\TagCart.cshtml" />
+    <Content Include="Views\Men\ListProduct.cshtml" />
+    <Content Include="Views\Kids\ListProduct.cshtml" />
+    <Content Include="Views\Woman\ListProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

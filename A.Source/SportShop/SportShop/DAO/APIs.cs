@@ -102,5 +102,24 @@ namespace SportShop.DAO
         {
             return (myData.Khachhangs.Single(x => x.Email.Equals(Email)));
         }
+        public int AddHoadon(Hoadon hd)
+        {
+            myData.Hoadons.Add(hd);
+            myData.SaveChanges();
+            return hd.HoadonID;
+        }
+        public void AddCTHoadon(List<ShoppingCartItem> lstSC,int HoadonID)
+        {
+            foreach(ShoppingCartItem item in lstSC){
+                Chitiethoadon ct = new Chitiethoadon(){HoadonID = HoadonID
+                                                        ,ProductID = item.ProductID
+                                                        ,Soluong = item.Quantity
+                                                        ,Giagoc = item.Priece
+                                                        ,Giadaban = item.Priece};
+                myData.Chitiethoadons.Add(ct);
+                myData.SaveChanges();
+            }
+
+        }
     }
 }

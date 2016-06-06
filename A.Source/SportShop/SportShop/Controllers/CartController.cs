@@ -66,5 +66,17 @@ namespace SportShop.Controllers
             }
             return Json(reponse);
         }
+        public ActionResult Purchase()
+        {
+            ShoppingCart sc = (ShoppingCart)Session["Cart"];
+            Khachhang kh = (Khachhang)Session["Khachhang"];
+            APIs api = new APIs();
+            Hoadon hd = new Hoadon(){KhachhangID=kh.KhachhangID, Ngaythang = DateTime.Now};
+            int HoadonID = api.AddHoadon(hd);
+            api.AddCTHoadon(sc.ListProduct,HoadonID);
+            sc.EmptyCart();
+            Session["Cart"] = sc;
+            return Redirect("/Home/Index");
+        }
     }
 }
