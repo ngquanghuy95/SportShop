@@ -8,6 +8,7 @@
     IQueryable<ShoeType> lstTyp = (IQueryable<ShoeType>)ViewData["Type"];
 }
 
+
 <div class="mens">
     <div class="main">
         <div class="wrap">
@@ -376,10 +377,10 @@
                     <h4>Danh mục</h4>
                     <div class="row row1 scroll-pane" style="height:auto;">
                         <div class="col col-4">
-                            <ul>
-                                <li><a href="/Woman">Nữ</a></li>
-                                <li><a href="/Nam">Nam</a></li>
-                                <li><a href="/Trẻ em">Trẻ em</a></li>
+                            <ul style="padding-left:27px;">
+                                <li><a style="color: #555555;font-size: 13px;line-height: 27px;" href="/Woman">Nữ</a></li>
+                                <li><a style="color: #555555;font-size: 13px;line-height: 27px;" href="/Nam">Nam</a></li>
+                                <li><a style="color: #555555;font-size: 13px;line-height: 27px;" href="/Trẻ em">Trẻ em</a></li>
                             </ul>
                         </div>
                     </div>
@@ -390,7 +391,14 @@
                         <div class="col col-4">
                             @foreach (var item in lstBra)
                             {
-                                <label class="radio"><input type="radio" name="radioBrand"><i></i>@item.BrandName</label>
+                                if (item.BrandID == 1)
+                                {
+                                    <label class="radio"><input value="@item.BrandID" checked type="radio" name="radioBrand"><i></i>Tất cả</label>
+                                }
+                                else
+                                {
+                                    <label class="radio"><input value="@item.BrandID" type="radio" name="radioBrand"><i></i>@item.BrandName</label>
+                                }
                             }
 
                         </div>
@@ -402,7 +410,14 @@
                         <div class="col col-4">
                             @foreach (var item in lstTyp)
                             {
-                                <label class="radio"><input type="radio" name="radioTypeShoes"><i></i>@item.TypeName</label>
+                                if (item.TypeID == 1)
+                                {
+                                    <label class="radio"><input value="@item.TypeID" checked type="radio" name="radioTypeShoes"><i></i>Tất cả</label>
+                                }
+                                else
+                                {
+                                    <label class="radio"><input value="@item.TypeID" type="radio" name="radioTypeShoes"><i></i>@item.TypeName</label>
+                                }
                             }
                         </div>
 
@@ -412,20 +427,47 @@
                     <h4>Màu sắc</h4>
                     <div class="row row1 scroll-pane">
                         <div class="col col-4">
-                            <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color1"> </span> Đỏ</label>
+                            @foreach (var item in lstCol)
+                            {
+                                if (item.ColorID == 1)
+                                {
+                                    <label class="radio"><input value="@item.ColorID" checked type="radio" name="radioColor"><i></i>Tất cả</label>
+                                }
+                                else
+                                {
+                                    <label class="radio"><input value="@item.ColorID" type="radio" name="radioColor"><i></i>@item.ColorName</label>
+                                }
+                            }
+                            @*<label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color1"> </span> Đỏ</label>
                             <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color2"> </span> Xanh lá</label>
                             <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color3"> </span> Xanh dương</label>
                             <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color4"> </span> Vàng</label>
                             <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color5"> </span> Tím</label>
                             <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color6"> </span> Cam</label>
-                            <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color7"> </span> Xám</label>
+                            <label class="radio"><input type="radio" name="radioColor"><i></i><span class="color color7"> </span> Xám</label>*@
                         </div>
                     </div>
                 </section>
-                
+                <button onclick="Filter();">Lọc</button>
             </div>
             <div class="clear"></div>
         </div>
     </div>
 </div>
-
+<script>
+    function Filter () {
+        var brandID=0;
+        if($('input:radio[name=radioBrand]:checked').val()!=null){
+            brandID = $('input:radio[name=radioBrand]:checked').val();
+        }
+        var typeShoesID = 0;
+        if ($('input:radio[name=radioBrand]:checked').val() != null) {
+            typeShoesID = $('input:radio[name=radioBrand]:checked').val();
+        }
+        var colorID = 0;
+        if ($('input:radio[name=radioColor]:checked').val() != null) {
+            colorID = $('input:radio[name=radioColor]:checked').val();
+        }
+        alert(brandID.toString() + '-' + typeShoesID.toString + '-' + colorID.toString());
+    });
+</script>

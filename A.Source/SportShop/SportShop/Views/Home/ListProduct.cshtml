@@ -36,8 +36,8 @@
                         float actual;
                         actual = (float)item.Price * (float)item.Sale.SaleNum / 100;
                                     }
-                                    <span class="reducedfrom">@item.Price</span>
-                                    <span class="actual">@actual</span>
+                                    <span class="reducedfrom">@((item.Price * 1000).ToString("N0"))</span>
+                                    <span class="actual">@((actual*1000).ToString("N0")) VNĐ</span>
                                 </div>
                             </div>
                             <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
@@ -55,7 +55,7 @@
                                 <div class="cart-left">
                                     <p class="title">@item.ProductName</p>
                                     <div class="price1">
-                                        <span class="actual">@item.Price</span>
+                                        <span class="actual">@((item.Price * 1000).ToString("N0")) VNĐ</span>
                                     </div>
                                 </div>
                                 <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
@@ -68,7 +68,7 @@
                                 <div class="cart-left">
                                     <p class="title">@item.ProductName</p>
                                     <div class="price1">
-                                        <span class="actual">@item.Price</span>
+                                        <span class="actual">@((item.Price * 1000).ToString("N0")) VNĐ</span>
                                     </div>
                                 </div>
                                 <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
@@ -104,7 +104,7 @@
                         <div class="cart-left">
                             <p class="title">@item.ProductName</p>
                             <div class="price1">
-                                <span class="actual">@item.Price</span>
+                                <span class="actual">@((item.Price * 1000).ToString("N0")) VNĐ</span>
                             </div>
                         </div>
                         <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"></div>
@@ -143,8 +143,8 @@
         float actual;
         actual = (float)item.Price * (float)item.Sale.SaleNum / 100;
                                 }
-                                <span class="reducedfrom">@item.Price</span>
-                                <span class="actual">@actual</span>
+                                <span class="reducedfrom">@((item.Price * 1000).ToString("N0"))</span>
+                                <span class="actual">@((actual * 1000).ToString("N0")) VNĐ</span>
                             </div>
                         </div>
                         <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
@@ -185,8 +185,8 @@
                         float actual;
                         actual = (float)item.Price * (float)item.Sale.SaleNum / 100;
                                     }
-                                    <span class="reducedfrom">@item.Price</span>
-                                    <span class="actual">@actual</span>
+                                    <span class="reducedfrom">@((item.Price * 1000).ToString("N0"))</span>
+                                    <span class="actual">@((actual * 1000).ToString("N0")) VNĐ</span>
                                 </div>
                             </div>
                             <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
@@ -204,7 +204,7 @@
                                 <div class="cart-left">
                                     <p class="title">@item.ProductName</p>
                                     <div class="price1">
-                                        <span class="actual">@item.Price</span>
+                                        <span class="actual">@((item.Price * 1000).ToString("N0")) VNĐ</span>
                                     </div>
                                 </div>
                                 <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
@@ -217,7 +217,7 @@
                                 <div class="cart-left">
                                     <p class="title">@item.ProductName</p>
                                     <div class="price1">
-                                        <span class="actual">@item.Price</span>
+                                        <span class="actual">@((item.Price * 1000).ToString("N0")) VNĐ</span>
                                     </div>
                                 </div>
                                 <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>

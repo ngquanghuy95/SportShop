@@ -15,7 +15,7 @@
 <script src="~/js/jquery.etalage.min.js"></script>
 @*<link href="~/css/bootstrap.min.css" rel="stylesheet" />*@
 <style>
-    .btn {
+    .mybtn {
         -moz-user-select: none;
         background-image: none;
         border: 1px solid transparent;
@@ -99,14 +99,14 @@
                     {
                         float actual;
                         actual = (float)product.Price * (float)product.Sale.SaleNum / 100;
-                        <p class="m_5">@actual <span class="reducedfrom">@product.Price</span></p>
+                        <p class="m_5">@((actual * 1000).ToString("N0")) VNĐ  <span class="reducedfrom">@((product.Price*1000).ToString("N0"))</span></p>
                     }
                     else
                     {
-                        <p class="m_5">@product.Price</p>
+                        <p class="m_5">@((product.Price * 1000).ToString("N0")) VNĐ</p>
                     }
                     <div class="btn_form">
-                        <button class="btn btn-primary" onclick="AddToCart(@product.ProductID)" id="btnAddToCart">Thêm vào giỏ hàng</button>
+                        <button class="btn-primary mybtn" onclick="AddToCart(@product.ProductID)" id="btnAddToCart">Thêm vào giỏ hàng</button>
                     </div>
                     <p class="m_text2">@product.Description</p>
                 </div>
@@ -116,7 +116,11 @@
                     <ul id="flexiselDemo3">
                         @foreach (var item in lstRP)
                         {
-                            <li><img src="@item.Avatar" /><a href="/Home/Detail?id=@item.ProductID">@item.ProductName</a><p>@item.Price</p></li>
+                            <li>
+                                <img src="@item.Avatar" />
+                                <a href="/Detail?id=@item.ProductID" class="textName">@item.ProductName</a>
+                                <p>@((item.Price * 1000).ToString("N0")) VNĐ</p>
+                            </li>
                         }
                     </ul>
                     <script type="text/javascript">
@@ -214,5 +218,22 @@
             'text' 
         );
     };
+    $('.textName').each(function (i, e) {
+        $(this).html(StringCutter($(this).html(), 20));
+    });
+    function StringCutter(str, maxlength) {
+        var i;
+        if (str.length > maxlength) {
+            for (i = maxlength; i > 0; i--) {
+                if (str[i] != ' ') {
+                    maxlength = maxlength - 1;
+                    break;
+                } else {
+                    break;
+                }
+            }
+            return str.substr(0, maxlength) + '...';
+        } else { return str; }
+    }
 
 </script>
