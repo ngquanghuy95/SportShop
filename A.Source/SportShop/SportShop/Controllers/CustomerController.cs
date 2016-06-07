@@ -42,7 +42,7 @@ namespace SportShop.Controllers
             }
             else
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("/Customer/Login");
             }
         }
         public ActionResult Logout()

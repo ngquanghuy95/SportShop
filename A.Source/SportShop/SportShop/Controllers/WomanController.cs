@@ -20,6 +20,9 @@ namespace SportShop.Controllers
             ViewData["lstNP"] = api.getLstNewProduct(2);
             ViewData["lstSP"] = api.getLstSaleProduct(2);
             ViewData["lstRP"] = api.getLstCommonProduct(2);
+            ViewData["Brand"] = api.getLstBrand();
+            ViewData["Color"] = api.getLstColor();
+            ViewData["Type"] = api.getLstType();
             return View();
         }
     }

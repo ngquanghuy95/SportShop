@@ -5,7 +5,7 @@
 }
 @{
     SportShop.Entities.Khachhang kh = (SportShop.Entities.Khachhang)Session["Khachhang"];
-  }
+}
 
 <script>
     function RemoveFromCart(id) {
@@ -167,19 +167,138 @@
         padding: 7px;
         vertical-align: top;
     }
-    .quantity-cell{
+
+    .quantity-cell {
         /*width:74px;*/
     }
-    .increase,.decrease{
-        border:1px solid #ddd;
-        font-weight:bold;
-        cursor:pointer;
-    }
-    .increase:hover,.decrease:hover{
-        background-color:red;
-        color:#fff;
+
+    .increase, .decrease {
+        border: 1px solid #ddd;
+        font-weight: bold;
+        cursor: pointer;
     }
 
+        .increase:hover, .decrease:hover {
+            background-color: red;
+            color: #fff;
+        }
+
+    .modal-open {
+        overflow: hidden;
+    }
+
+    .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1050;
+        display: none;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+    }
+
+        .modal.fade .modal-dialog {
+            -webkit-transition: -webkit-transform .3s ease-out;
+            -o-transition: -o-transform .3s ease-out;
+            transition: transform .3s ease-out;
+            -webkit-transform: translate(0,-25%);
+            -ms-transform: translate(0,-25%);
+            -o-transform: translate(0,-25%);
+            transform: translate(0,-25%);
+        }
+
+        .modal.in .modal-dialog {
+            -webkit-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            -o-transform: translate(0,0);
+            transform: translate(0,0);
+        }
+
+    .modal-open .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 10px;
+    }
+
+    .modal-content {
+        position: relative;
+        background-color: #fff;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: 1px solid #999;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 6px;
+        outline: 0;
+        -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+        box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    }
+
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: #000;
+    }
+
+        .modal-backdrop.fade {
+            filter: alpha(opacity=0);
+            opacity: 0;
+        }
+
+        .modal-backdrop.in {
+            filter: alpha(opacity=50);
+            opacity: .5;
+        }
+
+    .modal-header {
+        min-height: 16.43px;
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+        .modal-header .close {
+            margin-top: -2px;
+        }
+
+    .modal-title {
+        margin: 0;
+        line-height: 1.42857143;
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 15px;
+    }
+
+    .modal-footer {
+        padding: 15px;
+        text-align: right;
+        border-top: 1px solid #e5e5e5;
+    }
+
+        .modal-footer .btn + .btn {
+            margin-bottom: 0;
+            margin-left: 5px;
+        }
+
+        .modal-footer .btn-group .btn + .btn {
+            margin-left: -1px;
+        }
+
+        .modal-footer .btn-block + .btn-block {
+            margin-left: 0;
+        }
 </style>
 
 <div class="main">
@@ -189,11 +308,11 @@
                 <div class=" cart-left-buttons" style="position:relative">
                     <a href="/Home">Tiếp tục mua sắm | </a>
                     <a id="empty-cart" onclick="RemoveCart()" class="" href="javascript:void(0)">Xoá Giỏ Hàng</a>
-                    <a style="position:absolute;right:0;z-index:1; cursor:pointer" id="btnThanhtoan" data-toggle="modal" data-target="#myModal">Thanh toán</a>
+                    <a style="position:absolute;right:0;z-index:1; cursor:pointer" onclick="Thanhtoan()">Thanh toán</a>
                 </div>
                 @*<div class="cart-right-buttons ">
-                    <button class="btn btn-blue float-right">Thanh toán</button>
-                </div>*@
+                        <button class="btn btn-blue float-right">Thanh toán</button>
+                    </div>*@
                 <div class="clearfix"></div>
             </div>
             <div class="mainbox-cart-body">
@@ -233,54 +352,54 @@
                                             <a onclick="ChangeAmount(-1,@item.ProductID)" class="decrease">−</a>
                                         </td>
                                         <td class="price-cell">
-                                            <span class="price">@((item.Total*1000).ToString("N0"))</span>
+                                            <span class="price">@((item.Total * 1000).ToString("N0"))</span>
                                             &nbsp;
                                         </td>
                                     </tr>
                                 }
-                                }
-                            
+                            }
+
                         </tbody>
                     </table>
                     <!--cart_items-->
                 </div>
             </div>
-                <div style="float:left;width:100%;padding:10px 0; border:0 none;" id="checkout_totals">
-                        <div style="border: 1px solid #d0d0d0; padding: 10px; background-color: #fff; height:157px;
+            <div style="float:left;width:100%;padding:10px 0; border:0 none;" id="checkout_totals">
+                <div style="border: 1px solid #d0d0d0; padding: 10px; background-color: #fff; height:157px;
                                         font-size: 13px;width:60%;float:left;box-sizing:border-box;">
-                            <p>
-                                -Nếu bạn đồng ý mua danh sách sản phẩm ở trên thì vui lòng bấm nút 
-                                <b style="color: Olive">"THANH TOÁN"</b>
-                            </p>
-                            <p >
-                                -Để tiếp tục mua thêm sản phẩm khác, bạn bấm nút 
-                                <b style="color: Olive">"TIẾP TỤC MUA"</b>
-                            </p>
-                            <p>
-                                -Để bỏ từng sản phẩm trong danh sách, bấm vào biểu tượng xóa phía bên phải tên sản
-                                phẩm
-                            </p>
-                            <p >
-                                -Để thêm số lượng cho một sản phẩm cần mua, bạn chọn số lượng
-                            </p>
-                            <p>
-                                -Để hủy bỏ đơn hàng, bạn bấm nút 
-                                <b style="color: Olive">"XÓA GIỎ HÀNG"</b>
-                            </p>
-                        </div>
-                        <div style="border: 1px solid #d0d0d0; padding: 10px; background-color: #fff; height:157px;width:40%;float:left;box-sizing:border-box">
-                            <span style="font-style: italic;">Tổng tiền:</span>
-                            @if (Model != null)
-                            {
-                            <span id="subtotal" style="margin-left:5px; font-size:18px; font-weight:bold;">@Model.GetTotal().ToString("N0") VNĐ</span>
-                            }
-                        </div>
+                    <p>
+                        -Nếu bạn đồng ý mua danh sách sản phẩm ở trên thì vui lòng bấm nút
+                        <b style="color: Olive">"THANH TOÁN"</b>
+                    </p>
+                    <p>
+                        -Để tiếp tục mua thêm sản phẩm khác, bạn bấm nút
+                        <b style="color: Olive">"TIẾP TỤC MUA"</b>
+                    </p>
+                    <p>
+                        -Để bỏ từng sản phẩm trong danh sách, bấm vào biểu tượng xóa phía bên phải tên sản
+                        phẩm
+                    </p>
+                    <p>
+                        -Để thêm số lượng cho một sản phẩm cần mua, bạn chọn số lượng
+                    </p>
+                    <p>
+                        -Để hủy bỏ đơn hàng, bạn bấm nút
+                        <b style="color: Olive">"XÓA GIỎ HÀNG"</b>
+                    </p>
                 </div>
+                <div style="border: 1px solid #d0d0d0; padding: 10px; background-color: #fff; height:157px;width:40%;float:left;box-sizing:border-box">
+                    <span style="font-style: italic;">Tổng tiền:</span>
+                    @if (Model != null)
+                    {
+                        <span id="subtotal" style="margin-left:5px; font-size:18px; font-weight:bold;">@Model.GetTotal().ToString("N0") VNĐ</span>
+                    }
+                </div>
+            </div>
             <div class="frameButtom">
                 <div class=" cart-left-buttons" style="position:relative">
                     <a href="/Home">Tiếp tục mua sắm | </a>
                     <a id="empty-cart" onclick="RemoveCart()" class="" href="javascript:void(0)">Xoá Giỏ Hàng</a>
-                    <a style="position:absolute;right:0;z-index:1; cursor:pointer" onclick="Thanhtoan()" >Thanh toán</a>
+                    <a style="position:absolute;right:0;z-index:1; cursor:pointer" onclick="Thanhtoan()">Thanh toán</a>
                 </div>
             </div>
         </div>
@@ -295,7 +414,6 @@
 
 <script src="~/js/jquery.min.js"></script>
 <script src="~/js/bootstrap.min.js"></script>
-@if (kh != null && Model != null) { 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document" style="width:730px">
         <div class="modal-content">
@@ -303,7 +421,12 @@
                 <h4 class="modal-title" id="myModalLabel" style="text-align:center;">Hóa đơn thanh toán</h4>
             </div>
             <div class="modal-body">
-                <span>Tên khách hàng: @kh.Tenkhachhang</span>
+
+                @if (kh != null)
+                {<span>
+                    Tên khách hàng:@kh.Tenkhachhang
+                </span>}
+
                 <br />
                 <span>Danh sách sản phẩm:</span>
                 <br />
@@ -320,7 +443,7 @@
                             foreach (var item in Model.ListProduct)
                             {
                                 <tr>
-                                    
+
                                     <td style="width: 50%;" class="product-description">
                                         <a href="/Detail?id=@item.ProductID">@item.ProductName</a>
                                     </td>
@@ -343,7 +466,11 @@
                     </tbody>
                 </table>
                 <span style="font-style: italic;">Tổng tiền:</span>
-                <span id="subtotal" style="margin-left:5px; font-size:18px; font-weight:bold;">@Model.GetTotal().ToString("N0") VNĐ</span>
+                @if (Model != null)
+                {
+                    <span id="subtotal" style="margin-left:5px; font-size:18px; font-weight:bold;">@Model.GetTotal().ToString("N0") VNĐ</span>
+
+                }
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -352,8 +479,7 @@
         </div>
     </div>
 </div>
-<input  type="hidden" id="checkKh" value="@(kh!=null ? 1: 0)"/>
-}
+<input type="hidden" id="checkKh" value="@(kh!=null ? 1: 0)" />
 <script>
     function Thanhtoan() {
         if ($('#checkKh').val() == 1) {
@@ -363,3 +489,4 @@
         }
     }
 </script>
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />

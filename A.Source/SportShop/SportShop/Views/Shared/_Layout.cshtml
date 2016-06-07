@@ -4,67 +4,64 @@
 <html>
 
 <head>
-
-
     @{
-        APIs api = new APIs();
-        SportShop.Entities.Khachhang kh = (SportShop.Entities.Khachhang)Session["Khachhang"];
-        IQueryable<Brand> brand = api.getLstBrand();
-      }
-    <title>@ViewBag.Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="~/css/form.css" rel="stylesheet" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
-  
-    
-    
-     <script src="~/js/jquery1.min.js"></script>
-    <!-- start menu -->
-    <link href="~/css/megamenu.css" rel="stylesheet" type="text/css" />
-    <script src="~/js/megamenu.js"></script>
+    APIs api = new APIs();
+    SportShop.Entities.Khachhang kh = (SportShop.Entities.Khachhang)Session["Khachhang"];
+    IQueryable<Brand> brand = api.getLstBrand();
+    }
+        <title>@ViewBag.Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="~/css/form.css" rel="stylesheet" type="text/css" />
+        <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+        <link href="~/css/font-awesome.min.css" rel="stylesheet" />
 
-    <!--start slider -->
-    <link rel="stylesheet" href="~/css/fwslider.css">
-    <script src="~/js/jquery-ui.min.js"></script>
-    <script src="~/js/css3-mediaqueries.js"></script>
-    <script src="~/js/fwslider.js"></script>
-    <!--end slider -->
-    <script src="~/js/jquery.easydropdown.js"></script>
+
+
+        <script src="~/js/jquery1.min.js"></script>
+        <!-- start menu -->
+        <link href="~/css/megamenu.css" rel="stylesheet" type="text/css" />
+        <script src="~/js/megamenu.js"></script>
+
+        <!--start slider -->
+        <link rel="stylesheet" href="~/css/fwslider.css">
+        <script src="~/js/jquery-ui.min.js"></script>
+        <script src="~/js/css3-mediaqueries.js"></script>
+        <script src="~/js/fwslider.js"></script>
+        <!--end slider -->
+        <script src="~/js/jquery.easydropdown.js"></script>
 
 </head>
 <body style="width:100%">
     <div class="body-content" style="width:100%">
         <div class="header-top">
             <div class="wrap">
-    <div class="header-top-left">
-        <div class="clear"></div>
-    </div>
+                <div class="header-top-left">
+                    <div class="clear"></div>
+                </div>
 
-    @if (kh != null)
-    {
-        <div class="cssmenu">
-            
-            <ul>
-                <li><a href="#">Xin chào @kh.Tenkhachhang</a></li> |
-                <li><a href="/Customer/Logout"> Thoát</a></li>
-            </ul>
-        </div>
-    }
-    else
-    {
-        <div class="cssmenu">
-            <ul>
-                <li><a href="/Customer/Login">Đăng nhập</a></li> |
-                <li><a href="/Customer/Register">Đăng ký</a></li>
-            </ul>
-        </div>
-    }
+                @if (kh != null)
+                {
+                <div class="cssmenu">
 
-                        
+                    <ul>
+                        <li><a href="#">Xin chào @kh.Tenkhachhang</a></li> |
+                        <li><a href="/Customer/Logout"> Thoát</a></li>
+                    </ul>
+                </div>
+                }
+                else
+                {
+                <div class="cssmenu">
+                    <ul>
+                        <li><a href="/Customer/Login">Đăng nhập</a></li> |
+                        <li><a href="/Customer/Register">Đăng ký</a></li>
+                    </ul>
+                </div>
+                }
+
+
                 <div class="clear"></div>
             </div>
         </div>
@@ -89,12 +86,10 @@
                                                 <ul>
                                                     @foreach (var item in brand)
                                                     {
-                                                        <li><a href="/Woman?brand=@item.BrandID">@item.BrandName</a></li>
+                                                    if(item.BrandName.Contains("Adidas")){
+                                                    <li><a href="/Woman?brand=@item.BrandID">@item.BrandName</a></li>
                                                     }
-                                                    @*<li><a href="#">Adidas Originals</a></li>
-                                                    <li><a href="#">Adidas NEO</a></li>
-                                                    <li><a href="#">Adidas Stella McCartney </a></li>
-                                                    <li><a href="#">Adidas Porsche Design Sport</a></li>*@
+                                                    }
                                                 </ul>
                                             </div>
                                         </div>
@@ -102,9 +97,13 @@
                                             <div class="h_nav">
                                                 <h4>Nike</h4>
                                                 <ul>
-                                                    <li><a href="#">Nike</a></li>
-                                                    <li><a href="#">Nike Jordan</a></li>
-                                                    <li><a href="#">Nike Hurley</a></li>
+                                                    @foreach (var item in brand)
+                                                    {
+                                                    if (item.BrandName.Contains("Nike"))
+                                                    {
+                                                    <li><a href="/Woman?brand=@item.BrandID">@item.BrandName</a></li>
+                                                    }
+                                                    }
                                                 </ul>
                                             </div>
                                         </div>
@@ -120,10 +119,13 @@
                                             <div class="h_nav">
                                                 <h4>Adidas</h4>
                                                 <ul>
-                                                    <li><a href="#">Adidas Originals</a></li>
-                                                    <li><a href="#">Adidas NEO</a></li>
-                                                    <li><a href="#">Adidas Stella McCartney </a></li>
-                                                    <li><a href="#">Adidas Porsche Design Sport</a></li>
+                                                    @foreach (var item in brand)
+                                                    {
+                                                    if (item.BrandName.Contains("Adidas"))
+                                                    {
+                                                    <li><a href="/Men?brand=@item.BrandID">@item.BrandName</a></li>
+                                                    }
+                                                    }
                                                 </ul>
                                             </div>
                                         </div>
@@ -131,9 +133,13 @@
                                             <div class="h_nav">
                                                 <h4>Nike</h4>
                                                 <ul>
-                                                    <li><a href="#">Nike</a></li>
-                                                    <li><a href="#">Nike Jordan</a></li>
-                                                    <li><a href="#">Nike Hurley</a></li>
+                                                    @foreach (var item in brand)
+                                                    {
+                                                    if (item.BrandName.Contains("Nike"))
+                                                    {
+                                                    <li><a href="/Men?brand=@item.BrandID">@item.BrandName</a></li>
+                                                    }
+                                                    }
                                                 </ul>
                                             </div>
                                         </div>
@@ -149,10 +155,13 @@
                                             <div class="h_nav">
                                                 <h4>Adidas</h4>
                                                 <ul>
-                                                    <li><a href="#">Adidas Originals</a></li>
-                                                    <li><a href="#">Adidas NEO</a></li>
-                                                    <li><a href="#">Adidas Stella McCartney </a></li>
-                                                    <li><a href="#">Adidas Porsche Design Sport</a></li>
+                                                    @foreach (var item in brand)
+                                                    {
+                                                    if (item.BrandName.Contains("Adidas"))
+                                                    {
+                                                    <li><a href="/Kids?brand=@item.BrandID">@item.BrandName</a></li>
+                                                    }
+                                                    }
                                                 </ul>
                                             </div>
                                         </div>
@@ -160,9 +169,13 @@
                                             <div class="h_nav">
                                                 <h4>Nike</h4>
                                                 <ul>
-                                                    <li><a href="#">Nike</a></li>
-                                                    <li><a href="#">Nike Jordan</a></li>
-                                                    <li><a href="#">Nike Hurley</a></li>
+                                                    @foreach (var item in brand)
+                                                    {
+                                                    if (item.BrandName.Contains("Nike"))
+                                                    {
+                                                    <li><a href="/Kids?brand=@item.BrandID">@item.BrandName</a></li>
+                                                    }
+                                                    }
                                                 </ul>
                                             </div>
                                         </div>
