@@ -1,61 +1,40 @@
 ﻿@using SportShop.Entities;
-@{
-    IEnumerable<Product> lstP = (IEnumerable<Product>)ViewData["lstP"];
-    IEnumerable<Product> lstNP = (IEnumerable<Product>)ViewData["lstNP"];
-    IEnumerable<Product> lstSP = (IEnumerable<Product>)ViewData["lstSP"];
-    IEnumerable<Product> lstRP = (IEnumerable<Product>)ViewData["lstRP"];
-}
+@model IQueryable<Product>
 <style>
-    .cart-right:hover{
-        background: rgba(255, 0, 0, 0.66) url("../images/cart2.png") repeat scroll 2px 0!important;
+    .cart-right:hover {
+        background: rgba(255, 0, 0, 0.66) url("../images/cart2.png") repeat scroll 2px 0 !important;
     }
 </style>
 <h2 class="head">Danh sách các sản phẩm</h2>
-<div class="top-box">
-    @foreach (var item in lstP.Take(9))
-    {
-        <div class="col_of_product">
-            <div class="col_1_of_3 span_1_of_3">
+@if (Model.Count() > 0)
+{
+    <div class="top-box">
+        @foreach (var item in Model)
+        {
+            <div class="col_of_product">
+                <div class="col_1_of_3 span_1_of_3">
 
-                <div class="inner_content clearfix">
-                    <a href="/Detail?id=@item.ProductID">
-                        <div class="product_image">
-                            <img src="@item.Avatar" alt="" />
-                        </div>
-                    </a>
-                    @if (item.Sale.SaleNum > 0)
-                    {
-                        <div class="sale-box1">
-                            <span class="on_sale title_shop">Sale</span>
-                        </div>
-                        <div class="price">
-                            <div class="cart-left">
-                                <p class="title">@item.ProductName</p>
-                                <div class="price1">
-                                    @{
-                        float actual;
-                        actual = (float)item.Price * (float)item.Sale.SaleNum / 100;
-                                    }
-                                    <span class="reducedfrom">@item.Price</span>
-                                    <span class="actual">@actual</span>
-                                </div>
+                    <div class="inner_content clearfix">
+                        <a href="/Detail?id=@item.ProductID">
+                            <div class="product_image">
+                                <img src="@item.Avatar" alt="" />
                             </div>
-                            <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
-                            <div class="clear"></div>
-                        </div>
-                    }
-                    else
-                    {
-                        if (item.IsNew == true)
+                        </a>
+                        @if (item.Sale.SaleNum > 0)
                         {
-                            <div class="sale-box">
-                                <span class="on_sale title_shop">New</span>
+                            <div class="sale-box1">
+                                <span class="on_sale title_shop">Sale</span>
                             </div>
                             <div class="price">
                                 <div class="cart-left">
                                     <p class="title">@item.ProductName</p>
                                     <div class="price1">
-                                        <span class="actual">@item.Price</span>
+                                        @{
+                            float actual;
+                            actual = (float)item.Price * (float)item.Sale.SaleNum / 100;
+                                        }
+                                        <span class="reducedfrom">@((item.Price * 1000).ToString("N0"))</span>
+                                        <span class="actual">@((actual * 1000).ToString("N0")) VNĐ</span>
                                     </div>
                                 </div>
                                 <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
@@ -64,175 +43,50 @@
                         }
                         else
                         {
-                            <div class="price">
-                                <div class="cart-left">
-                                    <p class="title">@item.ProductName</p>
-                                    <div class="price1">
-                                        <span class="actual">@item.Price</span>
+                            if (item.IsNew == true)
+                            {
+                                <div class="sale-box">
+                                    <span class="on_sale title_shop">New</span>
+                                </div>
+                                <div class="price">
+                                    <div class="cart-left">
+                                        <p class="title">@item.ProductName</p>
+                                        <div class="price1">
+                                            <span class="actual">@((item.Price * 1000).ToString("N0")) VNĐ</span>
+                                        </div>
                                     </div>
+                                    <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
+                                    <div class="clear"></div>
                                 </div>
-                                <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
-                                <div class="clear"></div>
-                            </div>
-                        }
-                    }
-                </div>
-
-            </div>
-        </div>
-    }
-    <div class="clear"></div>
-
-</div>
-<h2 class="head">Danh sách sản phẩm mới</h2>
-<div class="top-box">
-    @foreach (var item in lstNP.Take(9))
-    {
-        <div class="col_of_product">
-            <div class="col_1_of_3 span_1_of_3">
-
-                <div class="inner_content clearfix">
-                    <a href="/Detail?id=@item.ProductID">
-                        <div class="product_image">
-                            <img src="@item.Avatar" alt="" />
-                        </div>
-                    </a>
-                    <div class="sale-box">
-                        <span class="on_sale title_shop">New</span>
-                    </div>
-                    <div class="price">
-                        <div class="cart-left">
-                            <p class="title">@item.ProductName</p>
-                            <div class="price1">
-                                <span class="actual">@item.Price</span>
-                            </div>
-                        </div>
-                        <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"></div>
-                        <div class="clear"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    }
-    <div class="clear"></div>
-</div>
-<h2 class="head">Danh sách sản phẩm giảm giá</h2>
-<div class="top-box">
-    @foreach (var item in lstSP.Take(9))
-    {
-        <div class="col_of_product">
-            <div class="col_1_of_3 span_1_of_3">
-
-                <div class="inner_content clearfix">
-                    <a href="/Detail?id=@item.ProductID">
-                        <div class="product_image">
-                            <img src="@item.Avatar" alt="" />
-                        </div>
-                    </a>
-                    <div class="sale-box1">
-                        <span class="on_sale title_shop">Sale</span>
-                    </div>
-                    <div class="price">
-                        <div class="cart-left">
-                            <p class="title">@item.ProductName</p>
-                            <div class="price1">
-                                @{
-        float actual;
-        actual = (float)item.Price * (float)item.Sale.SaleNum / 100;
-                                }
-                                <span class="reducedfrom">@item.Price</span>
-                                <span class="actual">@actual</span>
-                            </div>
-                        </div>
-                        <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
-                        <div class="clear"></div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    }
-    <div class="clear"></div>
-</div>
-<h2 class="head">Danh sách sản phẩm xem nhiều nhất</h2>
-<div class="top-box">
-    @foreach (var item in lstRP.Take(9))
-    {
-        <div class="col_of_product">
-            <div class="col_1_of_3 span_1_of_3">
-
-                <div class="inner_content clearfix">
-                    <a href="/Detail?id=@item.ProductID">
-                        <div class="product_image">
-                            <img src="@item.Avatar" alt="" />
-                        </div>
-                    </a>
-                    @if (item.Sale.SaleNum > 0)
-                    {
-                        <div class="sale-box1">
-                            <span class="on_sale title_shop">Sale</span>
-                        </div>
-                        <div class="price">
-                            <div class="cart-left">
-                                <p class="title">@item.ProductName</p>
-                                <div class="price1">
-                                    @{
-                        float actual;
-                        actual = (float)item.Price * (float)item.Sale.SaleNum / 100;
-                                    }
-                                    <span class="reducedfrom">@item.Price</span>
-                                    <span class="actual">@actual</span>
-                                </div>
-                            </div>
-                            <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
-                            <div class="clear"></div>
-                        </div>
-                    }
-                    else
-                    {
-                        if (item.IsNew == true)
-                        {
-                            <div class="sale-box">
-                                <span class="on_sale title_shop">New</span>
-                            </div>
-                            <div class="price">
-                                <div class="cart-left">
-                                    <p class="title">@item.ProductName</p>
-                                    <div class="price1">
-                                        <span class="actual">@item.Price</span>
+                            }
+                            else
+                            {
+                                <div class="price">
+                                    <div class="cart-left">
+                                        <p class="title">@item.ProductName</p>
+                                        <div class="price1">
+                                            <span class="actual">@((item.Price * 1000).ToString("N0")) VNĐ</span>
+                                        </div>
                                     </div>
+                                    <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
+                                    <div class="clear"></div>
                                 </div>
-                                <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
-                                <div class="clear"></div>
-                            </div>
+                            }
                         }
-                        else
-                        {
-                            <div class="price">
-                                <div class="cart-left">
-                                    <p class="title">@item.ProductName</p>
-                                    <div class="price1">
-                                        <span class="actual">@item.Price</span>
-                                    </div>
-                                </div>
-                                <div class="cart-right" title="Thêm vào giỏ hàng" onclick="AddToCart(@item.ProductID)"> </div>
-                                <div class="clear"></div>
-                            </div>
-                        }
-                    }
+                    </div>
+
                 </div>
-
             </div>
-        </div>
-    }
-    <div class="clear"></div>
+        }
+        <div class="clear"></div>
 
-</div>
+    </div>
+}
+else
+{
+    <p> Không có sản phẩm</p>
+}
+
 <script>
     function AddToCart(id) {
         $.post(
